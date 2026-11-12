@@ -1,5 +1,4 @@
-
-<!-- NITHIN -->
+  <!-- NITHIN -->
 
 <!DOCTYPE html>
 <!-- HOW TO EDIT: scroll to the bottom of this file and read the big
@@ -36,6 +35,7 @@
   <style>
     html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     button { touch-action: manipulation; }
+    img { max-width: 100%; }
     @media (max-width: 767px) {
       body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
       input, select, textarea { font-size: 16px !important; }
@@ -59,7 +59,7 @@
 
   <!-- Header -->
   <header id="siteHeader" class="sticky top-0 z-40 bg-sand-50/85 backdrop-blur-lg border-b border-sand-200 pt-[env(safe-area-inset-top)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-14 md:h-[72px] gap-4">
         <a href="#top" onclick="resetFilters()" class="flex items-center gap-2.5 shrink-0" aria-label="HAYOKI home">
           <span id="brandLogo" class="h-9 min-w-[2.25rem] flex items-center justify-center"></span>
@@ -95,12 +95,12 @@
   </header>
 
   <!-- Shop -->
-  <main id="shop" class="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-2 md:py-8 w-full scroll-mt-20">
+  <main id="shop" class="flex-1 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 md:py-8 w-full scroll-mt-20">
     <nav aria-label="Breadcrumb" class="hidden md:block text-xs text-stone-500 mb-6">
       <a href="#top" onclick="resetFilters()" class="hover:text-ink">Home</a><span class="mx-2">/</span><span id="crumb" class="text-ink font-medium">Shop all</span>
     </nav>
 
-    <div class="grid lg:grid-cols-[230px_1fr] gap-10">
+    <div class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[230px_minmax(0,1fr)] gap-4 lg:gap-10">
       <!-- Filters (desktop) -->
       <aside class="hidden lg:block" aria-label="Filters">
         <div class="sticky top-24 space-y-9">
@@ -117,7 +117,7 @@
         </div>
       </aside>
 
-      <section>
+      <section class="min-w-0">
         <div id="categoryTabs" class="lg:hidden flex items-start gap-1 overflow-x-auto no-scrollbar bg-white rounded-lg border border-sand-200 px-2 py-3 mb-2" role="tablist"></div>
         <div id="promoBanner" class="hidden rounded-lg bg-gradient-to-r from-clay-600 to-amber-500 text-white px-4 py-4 mb-3 items-center justify-between">
           <div><p class="text-xs opacity-90">Mega savings on home essentials</p><p id="promoText" class="text-xl font-bold"></p></div>
@@ -162,13 +162,13 @@
   </main>
 
   <!-- Newsletter -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16">
-    <div class="rounded-[2rem] bg-ink text-white px-6 sm:px-14 py-12 grid md:grid-cols-2 gap-8 items-center">
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full pb-8 md:pb-16">
+    <div class="rounded-2xl sm:rounded-[2rem] bg-ink text-white px-5 sm:px-14 py-8 sm:py-12 grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h3 class="font-serif text-3xl font-medium tracking-tight">Slow mail, good things.</h3>
+        <h3 class="font-serif text-2xl sm:text-3xl font-medium tracking-tight">Slow mail, good things.</h3>
         <p class="text-stone-400 mt-2 text-sm max-w-sm">Care guides, new arrivals and 10% off your first order. No spam, ever.</p>
       </div>
-      <form onsubmit="subscribe(event)" class="flex gap-2">
+      <form onsubmit="subscribe(event)" class="flex flex-col sm:flex-row gap-2">
         <input type="email" required placeholder="you@example.com" aria-label="Email address" class="flex-1 min-w-0 px-5 py-3.5 rounded-full bg-white/10 border border-white/15 text-sm placeholder:text-stone-500 focus:outline-none focus:border-amber-400" />
         <button class="px-6 py-3.5 rounded-full bg-amber-500 text-ink text-sm font-semibold hover:bg-amber-400 transition">Subscribe</button>
       </form>
@@ -177,9 +177,9 @@
 
   <!-- Footer -->
   <footer class="bg-white border-t border-sand-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
       <p>&copy; <span id="year"></span> <span id="footerText">HAYOKI. Household essentials made for daily living.</span></p>
-      <div class="flex gap-6 font-medium">
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 font-medium">
         <a href="#" class="hover:text-ink">Care Guides</a>
         <a href="#" class="hover:text-ink">Shipping &amp; Returns</a>
         <a href="#" class="hover:text-ink">Support</a>
@@ -802,7 +802,7 @@
     function imageBlock(p, cls = '') {
       return `<div class="img-wrap relative bg-gradient-to-br ${catStyle[p.category]} flex items-center justify-center ${cls}">
         <i data-lucide="${catIcon[p.category]}" class="w-10 h-10 text-white/70"></i>
-        <img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+        <img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" class="absolute inset-0 w-full h-full object-contain bg-white" />
       </div>`;
     }
 
@@ -893,7 +893,7 @@
             </div>
             <div class="mt-1">${priceHTML(p)}</div>
             ${sold ? `<p class="mt-0.5 text-[11px] font-medium text-clay-700">${sold}</p>` : ''}
-            <button onclick="event.stopPropagation(); addToCart(${p.id})" class="mt-auto pt-0 mt-2 w-full py-2 rounded-md border border-clay-600 text-clay-700 text-xs font-semibold active:bg-clay-600 active:text-white">Add to cart</button>
+            <div class="mt-auto"></div><button onclick="event.stopPropagation(); addToCart(${p.id})" class="mt-2 w-full py-2 rounded-md border border-clay-600 text-clay-700 text-xs font-semibold active:bg-clay-600 active:text-white">Add to cart</button>
           </div>
         </article>`;
       }).join('');
@@ -947,7 +947,7 @@
         <div class="relative" ontouchstart="swS(event)" ontouchend="swE(event)">
           <div class="img-wrap relative aspect-square sm:rounded-2xl overflow-hidden bg-gradient-to-br ${catStyle[p.category]} flex items-center justify-center cursor-zoom-in" onclick="openGalleryLB()">
             <i data-lucide="${catIcon[p.category]}" class="w-12 h-12 text-white/70"></i>
-            <img id="galImg" src="${esc(p.images[0])}" alt="${esc(p.title)}" class="absolute inset-0 w-full h-full object-cover" />
+            <img id="galImg" src="${esc(p.images[0])}" alt="${esc(p.title)}" class="absolute inset-0 w-full h-full object-contain bg-white" />
           </div>
           <button id="galPrev" onclick="setGal(galIdx - 1)" class="hidden absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow text-2xl leading-none items-center justify-center" aria-label="Previous photo">‹</button>
           <button id="galNext" onclick="setGal(galIdx + 1)" class="hidden absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow text-2xl leading-none items-center justify-center" aria-label="Next photo">›</button>
