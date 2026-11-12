@@ -1,0 +1,1519 @@
+
+<!-- NITHIN -->
+
+<!DOCTYPE html>
+<!-- HOW TO EDIT: scroll to the bottom of this file and read the big
+     "HOW TO EDIT THIS WEBSITE" box. Logo, products, photos and reviews are all explained there. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#9a5418" />
+  <title>HAYOKI — Modern Household Goods</title>
+  <meta name="description" content="Durable, timeless household essentials for kitchen, living, bed & bath and storage." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Fraunces', 'serif'] },
+          colors: {
+            sand: { 50: '#faf8f5', 100: '#f3efe8', 200: '#e7e0d3', 300: '#d4c9b5' },
+            clay: { 500: '#b5651d', 600: '#9a5418', 700: '#7e4413' },
+            ink: '#1f1b16'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    button { touch-action: manipulation; }
+    @media (max-width: 767px) {
+      body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+      input, select, textarea { font-size: 16px !important; }
+      #siteHeader { background: #9a5418; border: 0; backdrop-filter: none; }
+      #siteHeader #brandName { color: #fff; }
+      #cartOpenBtn { background: rgba(255,255,255,.18) !important; }
+      #toast { bottom: calc(76px + env(safe-area-inset-bottom)) !important; }
+    }
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif { font-variation-settings: 'opsz' 96; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { scrollbar-width: none; }
+    .img-wrap img.failed { display: none; }
+    .fade-up { animation: fadeUp .5s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .heart-on svg { fill: #e11d48; stroke: #e11d48; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body id="top" class="bg-sand-50 text-ink antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- Header -->
+  <header id="siteHeader" class="sticky top-0 z-40 bg-sand-50/85 backdrop-blur-lg border-b border-sand-200 pt-[env(safe-area-inset-top)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14 md:h-[72px] gap-4">
+        <a href="#top" onclick="resetFilters()" class="flex items-center gap-2.5 shrink-0" aria-label="HAYOKI home">
+          <span id="brandLogo" class="h-9 min-w-[2.25rem] flex items-center justify-center"></span>
+          <span id="brandName" class="font-serif text-xl font-semibold tracking-tight">HAYOKI</span>
+        </a>
+
+        <nav id="topNav" class="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-600" aria-label="Categories"></nav>
+
+        <div class="hidden md:flex flex-1 max-w-sm relative">
+          <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+          <input id="searchInput" type="search" placeholder="Search products…" aria-label="Search products"
+            class="w-full pl-11 pr-4 py-2.5 bg-sand-100 border border-transparent rounded-full text-sm placeholder:text-stone-400 focus:bg-white focus:border-clay-600 focus:outline-none transition" />
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <button id="wishToggle" onclick="toggleWishlistView()" class="relative max-md:hidden p-2.5 rounded-full hover:bg-sand-100 transition" aria-label="Saved items">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+            <span id="wishBadge" class="hidden absolute top-1 right-0.5 min-w-[16px] h-4 px-1 bg-rose-600 text-white text-[10px] font-bold rounded-full items-center justify-center">0</span>
+          </button>
+          <button id="cartOpenBtn" class="relative flex items-center gap-2 pl-3.5 pr-4 py-2.5 rounded-full bg-ink text-white text-sm font-medium hover:bg-clay-700 transition" aria-label="Open cart">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Cart</span>
+            <span id="cartCountBadge" class="min-w-[20px] h-5 px-1.5 bg-white text-ink text-xs font-bold rounded-full flex items-center justify-center">0</span>
+          </button>
+        </div>
+      </div>
+      <div class="pb-3 md:hidden relative">
+        <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-[60%]"></i>
+        <input id="mobileSearchInput" type="search" placeholder="Search products…" aria-label="Search products"
+          class="w-full pl-11 pr-4 py-2.5 bg-white rounded-lg text-sm shadow-sm focus:outline-none" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop -->
+  <main id="shop" class="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-2 md:py-8 w-full scroll-mt-20">
+    <nav aria-label="Breadcrumb" class="hidden md:block text-xs text-stone-500 mb-6">
+      <a href="#top" onclick="resetFilters()" class="hover:text-ink">Home</a><span class="mx-2">/</span><span id="crumb" class="text-ink font-medium">Shop all</span>
+    </nav>
+
+    <div class="grid lg:grid-cols-[230px_1fr] gap-10">
+      <!-- Filters (desktop) -->
+      <aside class="hidden lg:block" aria-label="Filters">
+        <div class="sticky top-24 space-y-9">
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 mb-3">Categories</h4>
+            <div id="sideCats" class="flex flex-col gap-1"></div>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 mb-4">Price</h4>
+            <input id="priceRange" type="range" min="0" step="50" class="w-full accent-[#9a5418]" aria-label="Maximum price" />
+            <div class="flex justify-between text-xs text-stone-500 mt-2"><span>₹0</span><span>Up to <strong id="priceLabel" class="text-ink"></strong></span></div>
+          </div>
+          <button onclick="resetFilters()" class="text-sm text-stone-500 underline underline-offset-4 hover:text-ink">Clear all filters</button>
+        </div>
+      </aside>
+
+      <section>
+        <div id="categoryTabs" class="lg:hidden flex items-start gap-1 overflow-x-auto no-scrollbar bg-white rounded-lg border border-sand-200 px-2 py-3 mb-2" role="tablist"></div>
+        <div id="promoBanner" class="hidden rounded-lg bg-gradient-to-r from-clay-600 to-amber-500 text-white px-4 py-4 mb-3 items-center justify-between">
+          <div><p class="text-xs opacity-90">Mega savings on home essentials</p><p id="promoText" class="text-xl font-bold"></p></div>
+          <i data-lucide="percent" class="w-9 h-9 opacity-80"></i>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 mb-3 md:pb-5 md:mb-6 md:border-b border-sand-200">
+          <div>
+            <h3 id="shopTitle" class="font-serif text-xl md:text-3xl font-medium tracking-tight">Shop all</h3>
+            <p id="resultCount" class="text-sm text-stone-500 mt-1"></p>
+          </div>
+          <div class="flex items-center gap-2 max-lg:hidden">
+            <label for="sortSelect" class="text-sm text-stone-500">Sort by</label>
+            <div class="relative">
+              <select id="sortSelect" class="appearance-none bg-white border border-sand-300 rounded-full pl-4 pr-10 py-2.5 text-sm font-medium focus:outline-none focus:border-clay-600">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="rating">Top rated</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-stone-500"></i>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="lg:hidden grid grid-cols-2 bg-white border border-sand-200 rounded-lg mb-3 text-sm font-semibold divide-x divide-sand-200">
+          <button onclick="openSheet('sort')" class="py-3 flex items-center justify-center gap-2"><i data-lucide="arrow-up-down" class="w-4 h-4"></i>Sort</button>
+          <button onclick="openSheet('filter')" class="py-3 flex items-center justify-center gap-2"><i data-lucide="sliders-horizontal" class="w-4 h-4"></i>Filter</button>
+        </div>
+
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-5"></div>
+
+        <div id="noResults" class="hidden text-center py-24">
+          <i data-lucide="search-x" class="w-12 h-12 text-stone-300 mx-auto mb-4"></i>
+          <h4 id="noResultsTitle" class="text-lg font-semibold">No items match your search</h4>
+          <p id="noResultsText" class="text-stone-500 text-sm mt-1">Try another keyword or choose a different category.</p>
+          <button onclick="resetFilters()" class="mt-5 px-5 py-2.5 rounded-full border border-sand-300 text-sm font-semibold hover:bg-sand-100 transition">Clear filters</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16">
+    <div class="rounded-[2rem] bg-ink text-white px-6 sm:px-14 py-12 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h3 class="font-serif text-3xl font-medium tracking-tight">Slow mail, good things.</h3>
+        <p class="text-stone-400 mt-2 text-sm max-w-sm">Care guides, new arrivals and 10% off your first order. No spam, ever.</p>
+      </div>
+      <form onsubmit="subscribe(event)" class="flex gap-2">
+        <input type="email" required placeholder="you@example.com" aria-label="Email address" class="flex-1 min-w-0 px-5 py-3.5 rounded-full bg-white/10 border border-white/15 text-sm placeholder:text-stone-500 focus:outline-none focus:border-amber-400" />
+        <button class="px-6 py-3.5 rounded-full bg-amber-500 text-ink text-sm font-semibold hover:bg-amber-400 transition">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-sand-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+      <p>&copy; <span id="year"></span> <span id="footerText">HAYOKI. Household essentials made for daily living.</span></p>
+      <div class="flex gap-6 font-medium">
+        <a href="#" class="hover:text-ink">Care Guides</a>
+        <a href="#" class="hover:text-ink">Shipping &amp; Returns</a>
+        <a href="#" class="hover:text-ink">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartModal" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300" aria-hidden="true">
+    <div id="cartBackdrop" class="absolute inset-0 bg-ink/50 backdrop-blur-sm"></div>
+    <aside id="cartDrawer" class="absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300 ease-out" role="dialog" aria-label="Shopping cart">
+      <div class="flex items-center justify-between px-6 py-5 border-b border-sand-200">
+        <h3 class="font-serif text-xl font-medium">Your basket</h3>
+        <button id="cartCloseBtn" class="p-2 rounded-full hover:bg-sand-100 transition" aria-label="Close cart"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div id="cartItemList" class="flex-1 overflow-y-auto px-6 py-2"></div>
+
+      <div class="px-6 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t border-sand-200 bg-white space-y-4">
+        <dl class="space-y-2 text-sm text-stone-600">
+          <div class="flex justify-between"><dt>Subtotal</dt><dd id="cartSubtotal" class="font-medium text-ink">₹0</dd></div>
+          <div class="flex justify-between pt-3 border-t border-sand-200 text-base font-semibold text-ink"><dt>Total</dt><dd id="cartTotal">₹0</dd></div>
+        </dl>
+        <p id="cartSavings" class="hidden text-sm font-semibold text-emerald-600 -mt-1"></p>
+        <p class="text-xs text-stone-500 -mt-1">Delivery charges and payment are confirmed with you on WhatsApp.</p>
+        <button id="openCheckoutBtn" class="w-full bg-ink text-white py-4 rounded-full font-semibold hover:bg-clay-700 transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> Order via WhatsApp</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Quick view (product gallery + details + reviews) -->
+  <div id="quickModal" class="hidden fixed inset-0 z-50 items-end sm:items-center justify-center sm:p-6 bg-ink/60 backdrop-blur-sm">
+    <div class="relative bg-white w-full max-w-5xl h-full max-h-none sm:h-auto sm:max-h-[90vh] rounded-none sm:rounded-[1.75rem] shadow-2xl flex flex-col overflow-hidden" role="dialog" aria-label="Product details">
+      <button onclick="closeQuick()" class="absolute top-3 left-3 sm:left-auto sm:right-3 z-20 p-2 rounded-full bg-white shadow border border-sand-200 hover:bg-sand-100" aria-label="Close"><i data-lucide="arrow-left" class="w-4 h-4 sm:hidden"></i><i data-lucide="x" class="w-4 h-4 hidden sm:block"></i></button>
+      <div class="overflow-y-auto overscroll-contain">
+        <div class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-3 md:gap-10 p-0 sm:p-8">
+          <div id="quickImage" class="min-w-0 md:sticky md:top-0 self-start"></div>
+          <div id="quickBody" class="min-w-0 flex flex-col px-4 sm:px-0 pt-1 md:pt-4 md:pr-8"></div>
+        </div>
+        <div id="quickReviews" class="border-t border-sand-200 px-5 sm:px-8 py-8 bg-sand-50"></div>
+      </div>
+      <div id="quickBar" class="sm:hidden flex gap-2 p-2.5 border-t border-sand-200 bg-white pb-[max(0.625rem,env(safe-area-inset-bottom))]"></div>
+    </div>
+  </div>
+
+  <!-- Photo viewer (product photos and review photos) -->
+  <div id="lightbox" class="hidden fixed inset-0 z-[70] items-center justify-center bg-black/90 p-4" role="dialog" aria-label="Photo viewer" onclick="if(event.target===this)closeLB()">
+    <button onclick="closeLB()" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white text-2xl leading-none" aria-label="Close photo viewer">×</button>
+    <button id="lbPrev" onclick="lbStep(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white text-3xl leading-none" aria-label="Previous photo">‹</button>
+    <img id="lbImg" src="" alt="" class="max-h-[86vh] max-w-full rounded-xl object-contain" />
+    <button id="lbNext" onclick="lbStep(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white text-3xl leading-none" aria-label="Next photo">›</button>
+    <p id="lbCount" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/80"></p>
+  </div>
+
+  <!-- Checkout -->
+  <div id="checkoutModal" class="hidden fixed inset-0 z-50 items-center justify-center p-0 sm:p-4 bg-ink/60 backdrop-blur-sm overflow-y-auto">
+    <div class="bg-white rounded-none sm:rounded-[1.75rem] max-w-3xl w-full min-h-full sm:min-h-0 shadow-2xl relative sm:my-auto" role="dialog" aria-label="Checkout">
+      <button id="closeCheckoutBtn" class="absolute top-5 right-5 p-2 rounded-full hover:bg-sand-100 z-10" aria-label="Close checkout"><i data-lucide="x" class="w-5 h-5"></i></button>
+
+      <div id="checkoutFormWrapper" class="grid md:grid-cols-5">
+        <div class="md:col-span-3 p-7 sm:p-9">
+          <h3 class="font-serif text-2xl font-medium">Delivery details</h3>
+          <p class="text-xs text-stone-500 mt-1 mb-6">Fill in your details and we'll open WhatsApp with your order ready to send. We'll confirm payment and delivery there.</p>
+          <form id="checkoutForm" class="space-y-4" onsubmit="handleOrderSubmit(event)">
+            <div>
+              <label for="f-name" class="block text-xs font-semibold text-stone-600 mb-1.5">Full name</label>
+              <input id="f-name" type="text" required autocomplete="name" placeholder="Alex Turner" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none" />
+            </div>
+            <div>
+              <label for="f-phone" class="block text-xs font-semibold text-stone-600 mb-1.5">Phone / WhatsApp number</label>
+              <input id="f-phone" type="tel" required autocomplete="tel" inputmode="tel" pattern="[0-9+\s\-()]{7,}" placeholder="+91 98765 43210" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none" />
+            </div>
+            <div>
+              <label for="f-addr" class="block text-xs font-semibold text-stone-600 mb-1.5">Address</label>
+              <input id="f-addr" type="text" required autocomplete="street-address" placeholder="452 Elm Avenue, Suite 3" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none" />
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label for="f-city" class="block text-xs font-semibold text-stone-600 mb-1.5">City</label>
+                <input id="f-city" type="text" required autocomplete="address-level2" placeholder="Chicago" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none" />
+              </div>
+              <div>
+                <label for="f-zip" class="block text-xs font-semibold text-stone-600 mb-1.5">Postal code</label>
+                <input id="f-zip" type="text" required autocomplete="postal-code" placeholder="60601" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none" />
+              </div>
+            </div>
+            <div>
+              <label for="f-notes" class="block text-xs font-semibold text-stone-600 mb-1.5">Notes <span class="font-normal text-stone-400">(optional)</span></label>
+              <textarea id="f-notes" rows="2" placeholder="Landmark, preferred delivery time…" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-full font-semibold hover:bg-[#1ebe5b] transition mt-2 flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i> Send order on WhatsApp · <span id="checkoutOrderTotal">₹0</span>
+            </button>
+          </form>
+        </div>
+        <div class="md:col-span-2 bg-sand-50 p-7 sm:p-9 md:rounded-r-[1.75rem] border-t md:border-t-0 md:border-l border-sand-200">
+          <h4 class="text-sm font-semibold mb-4">Order summary</h4>
+          <ul id="checkoutItems" class="space-y-3 text-sm"></ul>
+          <dl class="mt-5 pt-4 border-t border-sand-200 space-y-2 text-sm text-stone-600">
+            <div class="flex justify-between"><dt>Subtotal</dt><dd id="sumSubtotal" class="text-ink">₹0</dd></div>
+            <div class="flex justify-between font-semibold text-ink pt-2"><dt>Total</dt><dd id="sumTotal">₹0</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div id="checkoutSuccessWrapper" class="hidden text-center px-8 py-14">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-5"><i data-lucide="check" class="w-8 h-8"></i></div>
+        <h4 class="font-serif text-3xl font-medium">Almost done — send it on WhatsApp</h4>
+        <p class="text-sm text-stone-600 mt-3">Order <strong id="orderNumber" class="text-ink"></strong> is ready. WhatsApp should have opened with your details — just press <strong>Send</strong> there to place the order.</p>
+        <a id="waRetryLink" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full text-sm font-semibold hover:bg-[#1ebe5b] transition"><i data-lucide="message-circle" class="w-4 h-4"></i> Open WhatsApp again</a>
+        <div><button onclick="dismissCheckoutSuccess()" class="mt-4 px-7 py-3 text-sm font-semibold text-stone-600 hover:text-ink transition">Continue shopping</button></div>
+      </div>
+    </div>
+  </div>
+
+  <nav id="bottomNav" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-sand-200 grid grid-cols-4 pb-[env(safe-area-inset-bottom)]" aria-label="Main">
+    <button onclick="resetFilters(); scrollTo({top:0,behavior:'smooth'})" class="flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-stone-600"><i data-lucide="home" class="w-5 h-5"></i>Home</button>
+    <button onclick="$('categoryTabs').scrollIntoView({behavior:'smooth',block:'center'})" class="flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-stone-600"><i data-lucide="layout-grid" class="w-5 h-5"></i>Categories</button>
+    <button onclick="toggleWishlistView()" class="relative flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-stone-600"><i data-lucide="heart" class="w-5 h-5"></i>Saved<span id="navWishBadge" class="hidden absolute top-1 left-1/2 ml-1.5 min-w-[16px] h-4 px-1 bg-rose-600 text-white text-[10px] font-bold rounded-full items-center justify-center"></span></button>
+    <button onclick="openCart()" class="relative flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-stone-600"><i data-lucide="shopping-cart" class="w-5 h-5"></i>Cart<span id="navCartBadge" class="hidden absolute top-1 left-1/2 ml-1.5 min-w-[16px] h-4 px-1 bg-clay-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center"></span></button>
+  </nav>
+
+  <div id="sheet" class="hidden fixed inset-0 z-[60] items-end bg-ink/50" onclick="if(event.target===this)closeSheet()">
+    <div class="bg-white w-full rounded-t-2xl px-4 pt-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
+      <div class="flex items-center justify-between mb-1"><h4 id="sheetTitle" class="font-semibold"></h4><button onclick="closeSheet()" class="p-2" aria-label="Close"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+      <div id="sortPane">
+        <button data-v="featured" onclick="pickSort('featured')" class="block w-full text-left py-3 border-t border-sand-200 text-sm">Featured</button>
+        <button data-v="price-asc" onclick="pickSort('price-asc')" class="block w-full text-left py-3 border-t border-sand-200 text-sm">Price: low to high</button>
+        <button data-v="price-desc" onclick="pickSort('price-desc')" class="block w-full text-left py-3 border-t border-sand-200 text-sm">Price: high to low</button>
+        <button data-v="rating" onclick="pickSort('rating')" class="block w-full text-left py-3 border-t border-sand-200 text-sm">Top rated</button>
+      </div>
+      <div id="filterPane" class="hidden pt-3">
+        <input id="priceRangeM" type="range" min="0" step="50" class="w-full accent-[#9a5418]" aria-label="Maximum price" />
+        <div class="flex justify-between text-xs text-stone-500 mt-2"><span>₹0</span><span>Up to <strong id="priceLabelM" class="text-ink"></strong></span></div>
+        <div class="grid grid-cols-2 gap-2 mt-4">
+          <button onclick="resetFilters(); closeSheet()" class="py-3 rounded-md border border-sand-300 text-sm font-semibold">Reset</button>
+          <button onclick="closeSheet()" class="py-3 rounded-md bg-clay-600 text-white text-sm font-semibold">Show results</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] bg-ink text-white px-5 py-3 rounded-full shadow-xl flex items-center gap-2.5 transition-all duration-300 translate-y-24 opacity-0" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMessage" class="text-sm font-medium"></span>
+  </div>
+
+  <script>
+    /* ##########################################################################
+       #                                                                        #
+       #                HOW TO EDIT THIS WEBSITE  (read me first)               #
+       #                                                                        #
+       ##########################################################################
+
+       Everything you normally change is in 3 blocks at the TOP of this script.
+       Use Ctrl+F (Cmd+F on Mac) and search for the ★ word to jump to each one:
+
+         ★ SETTINGS     -> store name, LOGO, WhatsApp number, footer text
+         ★ CATEGORIES   -> rename / add the product groups (Kitchen, Living ...)
+         ★ PRODUCTS     -> each product's price, PHOTOS and REVIEWS, all in one block
+         ★ REVIEWS      -> notes about the sample reviews
+
+       Your folder must look like this (keep index.html next to "images"):
+
+         index.html
+         images/
+           logo.png                  <- your logo
+           dutch-oven-1.jpg ... -5   <- 5 photos per product
+           reviews/
+             p1-priya-1.jpg ... -4   <- 4 photos per customer review
+
+       --------------------------------------------------------------------------
+       A) CHANGE THE LOGO
+          Save your logo as  images/logo.png  (square or wide, transparent PNG
+          looks best). Done. To use another file name, change LOGO_IMAGE in
+          ★ SETTINGS. If the file is missing, the small icon is shown instead.
+
+       B) CHANGE THE STORE NAME / FOOTER / WHATSAPP NUMBER
+          Edit STORE_NAME, FOOTER_TEXT and WHATSAPP_NUMBER in ★ SETTINGS.
+
+       C) ADD A NEW PRODUCT
+          1. Go to ★ PRODUCTS and copy one whole  { ... },  block.
+          2. Paste it at the end of the list and give it the next id (9, 10 ...).
+          3. Fill in title, category, mrp, discount, rating, sold, description.
+          4. In its  images: [ ... ]  list write the names of its photos and put
+             those files in the "images" folder.
+          Remove a product = delete its block.
+
+       D) CHANGE / ADD PRODUCT PHOTOS
+          Each product block has its own  images: [ ... ]  list (up to 5 photos,
+          the first is the main picture). Replace the file in the "images" folder,
+          or change the file name in that list. Missing photos are skipped.
+
+       E0) SET THE REVIEW COUNT, STAR RATING AND SOLD NUMBER YOURSELF
+          In each product block type:
+              rating: 4.5,        <- average stars
+              reviewCount: 128,   <- how many reviews it has
+              sold: 350,          <- how many were sold
+          The card shows  4.5 stars (128 reviews) 350+ sold. Please use your real
+          numbers. You don't have to list all 128 reviews; list only the ones
+          (with photos) you want to show.
+
+       E) ADD A REAL CUSTOMER REVIEW (with up to 4 photos)
+          Reviews are inside the product too. In that product's  reviews: [ ... ]
+          copy the example, remove the //, and fill in the name, rating, date,
+          text and the 4 photo file names (save the photos in images/reviews/).
+          Star averages and review counts update by themselves. Set
+          SHOW_SAMPLE_REVIEWS = false when you have enough real reviews.
+
+       F) RENAME, ADD OR REMOVE CATEGORIES (Kitchen, Living, Storage ...)
+          Go to ★ CATEGORIES (just above ★ PRODUCTS).
+          - Rename: change  name  (and  short  for the top menu). The menu,
+            left filter, product cards and pop-up all update by themselves.
+          - Add: copy a line, give it a NEW id, then set  category: 'new-id'
+            on the products that belong to it.
+          - Remove: delete the line and move its products to another category.
+
+       G) CHANGE COLOURS AND FONTS
+          Near the top of this file, in  tailwind.config  (in the <head>):
+          change the hex colours under  clay  (accent colour),  sand  (page
+          background) and  ink  (text). Fonts are in  fontFamily.
+
+       I) CHANGE PRICES AND DISCOUNTS (all in rupees)
+          In ★ PRODUCTS each product has two numbers:
+              mrp: 1000,       <- original price (shown crossed out)
+              discount: 25,    <- discount percent
+          The site shows:  Rs 750   ~~Rs 1,000~~   25% off  and "You save Rs 250".
+          The price after discount is calculated automatically.
+          - No discount on a product?   discount: 0
+          - Festival sale on EVERYTHING? Set GLOBAL_DISCOUNT = 30 in ★ SETTINGS
+            (30% off all products). Set it back to null to end the sale.
+          - Want $ or another currency? Change CURRENCY_SYMBOL in ★ SETTINGS.
+
+       H) EDIT TEXT ON THE PAGE
+          Menu, footer links and headings are plain HTML in the <body> above
+          this script. Find the words you want to change and retype them.
+
+       Tip: keep a backup copy of index.html before you start editing.
+       ########################################################################## */
+
+    /* ★ SETTINGS ===============================================================
+       Change these to match your store.
+       ========================================================================== */
+    const STORE_NAME   = 'HAYOKI';                                         // shown beside the logo, in the tab title and in WhatsApp orders
+    const STORE_TAGLINE = 'Modern Household Goods';                        // shown in the browser tab: "HAYOKI — Modern Household Goods"
+    const FOOTER_TEXT  = 'HAYOKI. Household essentials made for daily living.'; // after the © year in the footer
+
+    // LOGO: put your logo file in the "images" folder and set its name here.
+    const LOGO_IMAGE   = 'images/logo.png';   // .png, .jpg, .svg or .webp
+    const LOGO_ROUNDED = false;               // true = crop the logo into a circle
+    const LOGO_ICON    = 'flame';             // shown when there is no logo file. Icon names: lucide.dev/icons
+
+    // WhatsApp number that receives orders: country code + number, digits only (no +, spaces or dashes).
+    // Example for India: 919876543210
+    const WHATSAPP_NUMBER = '9495782561';
+
+    // PRICES: the currency symbol shown everywhere (₹ = Indian rupee)
+    const CURRENCY_SYMBOL = '₹';
+
+    // SITE-WIDE SALE: type a number (e.g. 50 for "50% off on everything") to override every
+    // product's own discount, for a festival sale. Use null to use each product's own discount.
+    const GLOBAL_DISCOUNT = null;
+
+    // Customers can attach up to this many photos to a review they write on the page
+    const MAX_REVIEW_PHOTOS = 4;
+
+    /* ★ CATEGORIES =============================================================
+       The product groups in the top menu, the left filter and on each product.
+       --------------------------------------------------------------------------
+       RENAME a category : change  name  (and  short  if you use it). That's all.
+                           Keep  id  the same, because products point to it.
+       ADD a category    : copy one line, paste it, give it a NEW unique id
+                           (lowercase letters / numbers / dashes, e.g. 'gifts').
+                           Then use that id in a product:  category: 'gifts'
+       REMOVE a category : delete its line, and move its products to another id.
+       REORDER           : move the lines up or down.
+       Fields:
+         id    : short code used inside products (don't change after you use it)
+         name  : the full name customers see (left filter, product pop-up, breadcrumb)
+         short : OPTIONAL shorter name for the top menu and the product card tag
+         icon  : picture shown when a product has no photo. Pick from lucide.dev/icons
+         color : placeholder background colour (Tailwind "from-... to-..." classes)
+       ========================================================================== */
+    const CATEGORIES = [
+      { id: 'Repellent',  name: 'Repellent',        short: 'Repellent',  icon: 'cooking-pot', color: 'from-amber-200 to-orange-300' },
+      { id: 'living',   name: 'Living & Decor',          short: 'Living',   icon: 'lamp',        color: 'from-yellow-100 to-amber-300' },
+      { id: 'bed-bath', name: 'Bed & Bath',                                  icon: 'bed-double',  color: 'from-rose-100 to-stone-300' },
+      { id: 'storage',  name: 'Storage & Organization',  short: 'Storage',  icon: 'package',     color: 'from-stone-200 to-amber-200' }
+    ];
+
+    // Optional shortcut: reviewPics('p1-priya') = the 4 files images/reviews/p1-priya-1.jpg ... -4.jpg
+    // (you can use it inside a review:  photos: reviewPics('p1-priya')  instead of writing 4 paths)
+    const reviewPics = (key, ext = 'jpg', count = 4) =>
+      Array.from({ length: count }, (_, i) => `images/reviews/${key}-${i + 1}.${ext}`);
+
+    /* ★ PRODUCTS ===============================================================
+       (see the product block just below)
+       ========================================================================== */
+
+    /* ==========================================================================
+       ★ PRODUCTS  —  everything about a product lives in ONE block below
+       --------------------------------------------------------------------------
+       ONE BLOCK = ONE PRODUCT. Its details, price, PHOTOS and REVIEWS are all
+       together, so you change everything about a product in the same place.
+
+       TO ADD A NEW PRODUCT:
+         1. Copy one whole block  { ... },  and paste it at the end of the list.
+         2. Give it the next id number (9, 10, 11 ...). Never reuse an id.
+         3. Fill in title, category, mrp, discount, rating, sold, description.
+         4. In  images: [ ... ]  write the file names of its photos (up to 5).
+            Put those photo files in the "images" folder.
+         5. Add real customer reviews in  reviews: [ ... ]  (optional, later).
+         (The price after discount is worked out for you: mrp - discount%.)
+
+       TO CHANGE A PHOTO : replace the file in the "images" folder, or change the
+                           file name written in that product's  images  list.
+       TO ADD A REVIEW   : in that product's  reviews  list, copy the example line,
+                           remove the // and fill it in; list its photo files.
+
+       FIELDS
+         mrp      : the ORIGINAL price in rupees, before discount (shown crossed out)
+         discount : discount PERCENT, e.g. 25 means 25% off. Use 0 to show no discount.
+                    Selling price = mrp - discount%, e.g. mrp 1000 + discount 25 -> Rs 750
+         category : the id of one of your categories from ★ CATEGORIES
+                    (kitchen, living, bed-bath, storage ... or your own)
+         rating      : average star rating, type it yourself (e.g. 4.5)
+         reviewCount : total number of reviews, type your real number (e.g. 128).
+                       Shown as "(128 reviews)". 0 = no count shown.
+         sold        : real number of orders so far (e.g. 350 shows "350+ sold"). 0 hides it.
+         (If you also list reviews in  reviews: [ ... ]  they are counted inside
+          reviewCount, never twice. New reviews written on the page are added on top.)
+         images   : the product photos, first one is the main picture. Missing files
+                    are skipped, so you can start with 1 photo and add more later.
+         reviews  : real customer reviews for this product (name, rating, date, text, photos)
+       TO REMOVE a product: delete its whole block.
+       ========================================================================== */
+    const products = [
+      {
+        id: 1,
+        title: "Cast Iron Enameled Dutch Oven",
+        category: 'Repellent',
+        mrp: 300,        // original price (before discount), in rupees
+        discount: 25,    // discount percent (0 = no discount)
+        rating: 4.9,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 256,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 7968,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Heavy-duty 5.5-quart cast iron pot with durable enamel coating for stews, soups, and artisan breads.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/dutch-oven-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/dutch-oven-2.jpg',   // photo 2
+          'images/dutch-oven-3.jpg',   // photo 3
+          'images/dutch-oven-4.jpg',   // photo 4
+          'images/dutch-oven-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p1-priya-1.jpg', 'images/reviews/p1-priya-2.jpg', 'images/reviews/p1-priya-3.jpg', 'images/reviews/p1-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 2,
+        title: "Handcrafted Stoneware Dinner Set",
+        category: 'kitchen',
+        mrp: 5499,        // original price (before discount), in rupees
+        discount: 20,    // discount percent (0 = no discount)
+        rating: 4.8,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Matte-glazed natural ceramic plates and bowls designed for everyday family dining.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/stoneware-set-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/stoneware-set-2.jpg',   // photo 2
+          'images/stoneware-set-3.jpg',   // photo 3
+          'images/stoneware-set-4.jpg',   // photo 4
+          'images/stoneware-set-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p2-priya-1.jpg', 'images/reviews/p2-priya-2.jpg', 'images/reviews/p2-priya-3.jpg', 'images/reviews/p2-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 3,
+        title: "Organic Waffle Bath Towel Set",
+        category: 'bed-bath',
+        mrp: 3499,        // original price (before discount), in rupees
+        discount: 30,    // discount percent (0 = no discount)
+        rating: 4.7,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "100% Turkish organic cotton bath sheets featuring high absorbency and quick-drying weave.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/towel-set-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/towel-set-2.jpg',   // photo 2
+          'images/towel-set-3.jpg',   // photo 3
+          'images/towel-set-4.jpg',   // photo 4
+          'images/towel-set-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p3-priya-1.jpg', 'images/reviews/p3-priya-2.jpg', 'images/reviews/p3-priya-3.jpg', 'images/reviews/p3-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 4,
+        title: "Amber Glass Ambient Table Lamp",
+        category: 'living',
+        mrp: 4499,        // original price (before discount), in rupees
+        discount: 35,    // discount percent (0 = no discount)
+        rating: 4.9,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Ribbed blown-glass accent lamp providing soft, warm illumination to living rooms and bedside tables.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/table-lamp-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/table-lamp-2.jpg',   // photo 2
+          'images/table-lamp-3.jpg',   // photo 3
+          'images/table-lamp-4.jpg',   // photo 4
+          'images/table-lamp-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p4-priya-1.jpg', 'images/reviews/p4-priya-2.jpg', 'images/reviews/p4-priya-3.jpg', 'images/reviews/p4-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 5,
+        title: "Handwoven Jute Storage Basket",
+        category: 'storage',
+        mrp: 2999,        // original price (before discount), in rupees
+        discount: 40,    // discount percent (0 = no discount)
+        rating: 4.6,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Sturdy braided natural jute basket with leather handles, perfect for throws, cushions, and toys.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/storage-basket-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/storage-basket-2.jpg',   // photo 2
+          'images/storage-basket-3.jpg',   // photo 3
+          'images/storage-basket-4.jpg',   // photo 4
+          'images/storage-basket-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p5-priya-1.jpg', 'images/reviews/p5-priya-2.jpg', 'images/reviews/p5-priya-3.jpg', 'images/reviews/p5-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 6,
+        title: "Stainless Steel French Coffee Press",
+        category: 'kitchen',
+        mrp: 3299,        // original price (before discount), in rupees
+        discount: 25,    // discount percent (0 = no discount)
+        rating: 4.9,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Double-wall insulated coffee maker designed to brew smooth, hot, and full-bodied morning coffee.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/french-press-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/french-press-2.jpg',   // photo 2
+          'images/french-press-3.jpg',   // photo 3
+          'images/french-press-4.jpg',   // photo 4
+          'images/french-press-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p6-priya-1.jpg', 'images/reviews/p6-priya-2.jpg', 'images/reviews/p6-priya-3.jpg', 'images/reviews/p6-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 7,
+        title: "French Washed Linen Duvet Cover",
+        category: 'bed-bath',
+        mrp: 9999,        // original price (before discount), in rupees
+        discount: 30,    // discount percent (0 = no discount)
+        rating: 4.9,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Breathable pure flax linen that gets softer with every wash for temperature-balanced rest.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/linen-duvet-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/linen-duvet-2.jpg',   // photo 2
+          'images/linen-duvet-3.jpg',   // photo 3
+          'images/linen-duvet-4.jpg',   // photo 4
+          'images/linen-duvet-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p7-priya-1.jpg', 'images/reviews/p7-priya-2.jpg', 'images/reviews/p7-priya-3.jpg', 'images/reviews/p7-priya-4.jpg'] },
+        ]
+      },
+      {
+        id: 8,
+        title: "Botanical Soy Wax Scented Candle",
+        category: 'living',
+        mrp: 1999,        // original price (before discount), in rupees
+        discount: 25,    // discount percent (0 = no discount)
+        rating: 4.7,       // average star rating, type it yourself (1 to 5, e.g. 4.5)
+        reviewCount: 0,    // total number of reviews, type your real number (e.g. 128). 0 = none
+        sold: 0,           // number of orders so far, type your real number (e.g. 350). 0 = hide
+        description: "Hand-poured candle with cedarwood and wild amber notes in an amber glass jar. 55-hour burn.",
+        // ---- PHOTOS of this product (up to 5; photo 1 is the main picture) ----
+        images: [
+          'images/soy-candle-1.jpg',   // photo 1 (main photo shown on the card)
+          'images/soy-candle-2.jpg',   // photo 2
+          'images/soy-candle-3.jpg',   // photo 3
+          'images/soy-candle-4.jpg',   // photo 4
+          'images/soy-candle-5.jpg',   // photo 5
+        ],
+        // ---- REAL CUSTOMER REVIEWS of this product (up to 4 photos each) ----
+        reviews: [
+          // Copy the example below, remove the // at the start of each line, then edit it:
+          // { name: 'Priya S.', rating: 5, date: '12 Oct 2026', text: 'Love it!',
+          //   photos: ['images/reviews/p8-priya-1.jpg', 'images/reviews/p8-priya-2.jpg', 'images/reviews/p8-priya-3.jpg', 'images/reviews/p8-priya-4.jpg'] },
+        ]
+      }
+    ];
+
+    // ---- (nothing to edit below this line for products) ----
+    const pics = (folder, count = 5) => Array.from({ length: count }, (_, i) => `images/${folder}-${i + 1}.jpg`);
+    products.forEach(p => { p.images = p.images && p.images.length ? p.images : (p.folder ? pics(p.folder) : []); p.image = p.images[0]; });
+    // Works out the selling price from mrp and discount (nothing to edit here)
+    products.forEach(p => {
+      p.mrp = Number(p.mrp ?? p.price) || 0;
+      p.discount = Math.min(95, Math.max(0, Number(GLOBAL_DISCOUNT ?? p.discount) || 0));
+      p.price = Math.round(p.mrp * (1 - p.discount / 100));   // price customers pay
+      p.save = p.mrp - p.price;                               // rupees saved
+    });
+    const soldText = id => {
+      const n = (products.find(p => p.id === id) || {}).sold || 0;
+      return n >= 1000 ? `${(Math.floor(n / 100) / 10).toString().replace(/\.0$/, '')}k+ sold` : n >= 10 ? `${Math.floor(n / 10) * 10}+ sold` : n > 0 ? `${n} sold` : '';
+    };
+
+    // Built from ★ CATEGORIES in the settings area (nothing to edit here)
+    const categories = [{ key: 'all', label: 'All', icon: 'layout-grid' },
+      ...CATEGORIES.map(c => ({ key: c.id, label: c.name, icon: c.icon }))];
+    const catStyle = new Proxy({}, { get: (_, id) => (CATEGORIES.find(c => c.id === id) || {}).color || 'from-stone-200 to-amber-200' });
+    const catIcon  = new Proxy({}, { get: (_, id) => (CATEGORIES.find(c => c.id === id) || {}).icon || 'package' });
+    const catLabel = id => { const c = CATEGORIES.find(c => c.id === id); return c ? (c.short || c.name) : id; };
+    function renderTopNav() {
+      $('topNav').innerHTML = CATEGORIES.map(c =>
+        `<a href="#shop" onclick="setCategory('${c.id}')" class="hover:text-ink transition">${esc(c.short || c.name)}</a>`).join('');
+    }
+
+    // ---------- State (cart + wishlist persist in localStorage) ----------
+    const store = {
+      get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+      set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } }
+    };
+    let cart = store.get('hh_cart', []).filter(i => products.some(p => p.id === i.id)); // [{id, quantity}]
+    let wishlist = store.get('hh_wish', []);
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let sortBy = 'featured';
+    let wishlistOnly = false;
+    let quickId = null, quickQty = 1;
+    const PRICE_MAX = Math.ceil(Math.max(...products.map(p => p.price)) / 100) * 100;
+    let maxPrice = PRICE_MAX;
+
+    const $ = id => document.getElementById(id);
+    // Applies the ★ SETTINGS to the page (store name, logo, tab title, footer)
+    function applyBranding() {
+      document.title = `${STORE_NAME} — ${STORE_TAGLINE}`;
+      $('brandName').textContent = STORE_NAME;
+      $('footerText').textContent = FOOTER_TEXT;
+      const logo = $('brandLogo');
+      // Start with the icon, then swap in your logo image once we know the file exists
+      logo.innerHTML = `<span class="w-9 h-9 rounded-full bg-clay-600 text-white flex items-center justify-center"><i data-lucide="${LOGO_ICON}" class="w-4 h-4"></i></span>`;
+      if (!LOGO_IMAGE) return;
+      const im = new Image();
+      im.onload = () => {
+        im.alt = STORE_NAME + ' logo';
+        im.className = 'h-9 w-auto max-w-[140px] object-contain ' + (LOGO_ROUNDED ? 'rounded-full aspect-square object-cover' : '');
+        logo.innerHTML = ''; logo.appendChild(im);
+      };
+      im.src = LOGO_IMAGE;
+    }
+
+    const money = n => CURRENCY_SYMBOL + Number(n).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+    // Flipkart-style price: ₹750  ~~₹1,000~~  25% off
+    function priceHTML(p, big = false) {
+      const has = p.discount > 0 && p.mrp > p.price;
+      return `<div class="flex items-baseline flex-wrap gap-x-2 gap-y-0.5">
+        <span class="font-semibold ${big ? 'text-3xl' : 'text-base sm:text-lg'}">${money(p.price)}</span>
+        ${has ? `<del class="text-stone-400 ${big ? 'text-base' : 'text-xs sm:text-sm'}">${money(p.mrp)}</del>
+        <span class="font-semibold text-emerald-600 ${big ? 'text-base' : 'text-xs sm:text-sm'}">${p.discount}% off</span>` : ''}
+      </div>`;
+    }
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const byId = id => products.find(p => p.id === id);
+    const icons = () => lucide.createIcons();
+
+    // Hide broken images so the gradient + icon placeholder behind them shows
+    document.addEventListener('error', e => {
+      if (e.target.tagName === 'IMG') e.target.classList.add('failed');
+    }, true);
+
+    function imageBlock(p, cls = '') {
+      return `<div class="img-wrap relative bg-gradient-to-br ${catStyle[p.category]} flex items-center justify-center ${cls}">
+        <i data-lucide="${catIcon[p.category]}" class="w-10 h-10 text-white/70"></i>
+        <img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+      </div>`;
+    }
+
+    // ---------- Categories ----------
+    function renderTabs() {
+      $('categoryTabs').innerHTML = categories.map(c => {
+        const active = !wishlistOnly && currentCategory === c.key;
+        return `<button role="tab" aria-selected="${active}" onclick="setCategory('${c.key}')" class="flex flex-col items-center gap-1.5 w-[72px] shrink-0">
+          <span class="w-14 h-14 rounded-full flex items-center justify-center ${active ? 'bg-clay-600 text-white' : 'bg-sand-100 text-clay-700'}"><i data-lucide="${c.icon}" class="w-6 h-6"></i></span>
+          <span class="text-[11px] leading-tight text-center w-full truncate ${active ? 'font-semibold text-ink' : 'text-stone-600'}">${c.label}</span></button>`;
+      }).join('');
+      $('sideCats').innerHTML = categories.map(c => {
+        const active = !wishlistOnly && currentCategory === c.key;
+        const n = products.filter(p => c.key === 'all' || p.category === c.key).length;
+        return `<button onclick="setCategory('${c.key}')" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-left transition ${active ? 'bg-sand-100 font-semibold text-ink' : 'text-stone-600 hover:bg-sand-100'}">
+          <span>${c.label}</span><span class="text-xs text-stone-400">${n}</span></button>`;
+      }).join('');
+    }
+
+    function setCategory(key) {
+      currentCategory = key;
+      wishlistOnly = false;
+      renderAll();
+    }
+
+    function setPriceUI(v) {
+      maxPrice = +v;
+      ['priceRange', 'priceRangeM'].forEach(id => $(id).value = maxPrice);
+      ['priceLabel', 'priceLabelM'].forEach(id => $(id).textContent = money(maxPrice));
+    }
+
+    function resetFilters() {
+      currentCategory = 'all'; searchQuery = ''; wishlistOnly = false; maxPrice = PRICE_MAX;
+      $('searchInput').value = ''; $('mobileSearchInput').value = '';
+      setPriceUI(PRICE_MAX);
+      renderAll();
+    }
+
+    function toggleWishlistView() {
+      wishlistOnly = !wishlistOnly;
+      renderAll();
+      $('shop').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ---------- Products ----------
+    function getVisible() {
+      const q = searchQuery.toLowerCase();
+      let list = products.filter(p =>
+        (currentCategory === 'all' || p.category === currentCategory) &&
+        (!wishlistOnly || wishlist.includes(p.id)) && p.price <= maxPrice &&
+        (p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.category.toLowerCase().includes(q))
+      );
+      if (sortBy === 'price-asc') list.sort((a, b) => a.price - b.price);
+      if (sortBy === 'price-desc') list.sort((a, b) => b.price - a.price);
+      if (sortBy === 'rating') list.sort((a, b) => ratingInfo(b).avg - ratingInfo(a).avg);
+      return list;
+    }
+
+    function renderProducts() {
+      const list = getVisible();
+      const label = wishlistOnly ? 'Saved items' : (categories.find(c => c.key === currentCategory).key === 'all' ? 'Shop all' : categories.find(c => c.key === currentCategory).label);
+      $('shopTitle').textContent = label;
+      $('crumb').textContent = label;
+      $('resultCount').textContent = `${list.length} ${list.length === 1 ? 'product' : 'products'}`;
+
+      const empty = list.length === 0;
+      $('noResults').classList.toggle('hidden', !empty);
+      $('productGrid').classList.toggle('hidden', empty);
+      if (empty) {
+        $('noResultsTitle').textContent = wishlistOnly ? 'No saved items yet' : 'No items match your search';
+        $('noResultsText').textContent = wishlistOnly ? 'Tap the heart on any product to save it here.' : 'Try another keyword or choose a different category.';
+        icons(); return;
+      }
+
+      $('productGrid').innerHTML = list.map((p, i) => {
+        const saved = wishlist.includes(p.id), r = ratingInfo(p), sold = soldText(p.id);
+        return `
+        <article class="fade-up flex flex-col bg-white border border-sand-200 rounded-lg overflow-hidden" style="animation-delay:${i * 30}ms">
+          <div class="relative">
+            <button onclick="openQuick(${p.id})" class="block w-full aspect-square" aria-label="View ${esc(p.title)}">${imageBlock(p, 'w-full h-full')}</button>
+            <button onclick="toggleWish(${p.id})" class="${saved ? 'heart-on' : ''} absolute top-2 right-2 p-1.5 bg-white rounded-full shadow" aria-label="${saved ? 'Remove from' : 'Add to'} saved items" aria-pressed="${saved}"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+          <div class="p-2.5 flex flex-col flex-1" onclick="openQuick(${p.id})">
+            <h4 class="text-[13px] leading-snug line-clamp-2 min-h-[2.5rem]">${esc(p.title)}</h4>
+            <div class="mt-1.5 flex items-center gap-1.5 text-xs">
+              <span class="inline-flex items-center gap-0.5 bg-emerald-600 text-white font-semibold px-1.5 py-0.5 rounded">${r.avg.toFixed(1)}<svg viewBox="0 0 24 24" class="w-2.5 h-2.5" aria-hidden="true"><path fill="currentColor" d="${STAR_PATH}"/></svg></span>
+              ${r.count ? `<span class="text-stone-500">(${r.count.toLocaleString('en-IN')})</span>` : ''}
+            </div>
+            <div class="mt-1">${priceHTML(p)}</div>
+            ${sold ? `<p class="mt-0.5 text-[11px] font-medium text-clay-700">${sold}</p>` : ''}
+            <button onclick="event.stopPropagation(); addToCart(${p.id})" class="mt-auto pt-0 mt-2 w-full py-2 rounded-md border border-clay-600 text-clay-700 text-xs font-semibold active:bg-clay-600 active:text-white">Add to cart</button>
+          </div>
+        </article>`;
+      }).join('');
+      icons();
+    }
+
+    function renderAll() { renderTabs(); renderProducts(); updateWishBadge(); icons(); }
+
+    // ---------- Search & sort ----------
+    const handleSearch = e => {
+      searchQuery = e.target.value.trim();
+      $('searchInput').value = e.target.value; $('mobileSearchInput').value = e.target.value;
+      renderProducts();
+    };
+    $('searchInput').addEventListener('input', handleSearch);
+    $('mobileSearchInput').addEventListener('input', handleSearch);
+    $('sortSelect').addEventListener('change', e => { sortBy = e.target.value; renderProducts(); });
+
+    // ---------- Wishlist ----------
+    function toggleWish(id) {
+      const was = wishlist.includes(id);
+      wishlist = was ? wishlist.filter(x => x !== id) : [...wishlist, id];
+      store.set('hh_wish', wishlist);
+      showToast(was ? 'Removed from saved items' : 'Saved for later');
+      updateWishBadge();
+      renderProducts();
+      if (quickId === id) openQuick(id, true);
+    }
+    function updateWishBadge() {
+      const b = $('wishBadge');
+      b.textContent = wishlist.length;
+      $('navWishBadge').textContent = wishlist.length; $('navWishBadge').classList.toggle('hidden', !wishlist.length); $('navWishBadge').classList.toggle('flex', wishlist.length > 0);
+      b.classList.toggle('hidden', wishlist.length === 0);
+      b.classList.toggle('flex', wishlist.length > 0);
+      $('wishToggle').classList.toggle('bg-sand-100', wishlistOnly);
+    }
+
+    // ---------- Photo gallery (inside the product pop-up) ----------
+    let galList = [], galIdx = 0;
+
+    // Checks which photos really exist, so missing ones are skipped
+    const probeCache = {};
+    const probe = src => probeCache[src] ??= new Promise(res => { const im = new Image(); im.onload = () => res(true); im.onerror = () => res(false); im.src = src; });
+    async function validImages(p) {
+      const ok = await Promise.all(p.images.map(probe));
+      return p.images.filter((_, i) => ok[i]);
+    }
+
+    function galleryShell(p) {
+      return `
+        <div class="relative" ontouchstart="swS(event)" ontouchend="swE(event)">
+          <div class="img-wrap relative aspect-square sm:rounded-2xl overflow-hidden bg-gradient-to-br ${catStyle[p.category]} flex items-center justify-center cursor-zoom-in" onclick="openGalleryLB()">
+            <i data-lucide="${catIcon[p.category]}" class="w-12 h-12 text-white/70"></i>
+            <img id="galImg" src="${esc(p.images[0])}" alt="${esc(p.title)}" class="absolute inset-0 w-full h-full object-cover" />
+          </div>
+          <button id="galPrev" onclick="setGal(galIdx - 1)" class="hidden absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow text-2xl leading-none items-center justify-center" aria-label="Previous photo">‹</button>
+          <button id="galNext" onclick="setGal(galIdx + 1)" class="hidden absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow text-2xl leading-none items-center justify-center" aria-label="Next photo">›</button>
+        </div>
+        <div id="galThumbs" class="flex gap-2 mt-3 overflow-x-auto no-scrollbar pb-1 px-3 sm:px-0"></div>
+        <p id="galCount" class="text-xs text-stone-500 mt-1"></p>`;
+    }
+
+    function buildGallery() {
+      const img = $('galImg'); if (!img) return;
+      const multi = galList.length > 1;
+      ['galPrev', 'galNext'].forEach(id => { $(id).classList.toggle('hidden', !multi); $(id).classList.toggle('flex', multi); });
+      if (!galList.length) { img.classList.add('failed'); $('galThumbs').innerHTML = ''; $('galCount').textContent = ''; return; }
+      galIdx = Math.max(0, Math.min(galIdx, galList.length - 1));
+      img.classList.remove('failed');
+      img.src = galList[galIdx];
+      $('galThumbs').innerHTML = galList.map((src, i) =>
+        `<button onclick="setGal(${i})" class="shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition ${i === galIdx ? 'border-ink' : 'border-transparent opacity-70 hover:opacity-100'}" aria-label="Show photo ${i + 1}" aria-current="${i === galIdx}">
+          <img src="${esc(src)}" alt="" class="w-full h-full object-cover" /></button>`).join('');
+      $('galCount').textContent = multi ? `Photo ${galIdx + 1} of ${galList.length}` : '';
+    }
+    function setGal(i) { if (!galList.length) return; galIdx = (i + galList.length) % galList.length; buildGallery(); }
+
+    // ---------- Full-screen photo viewer ----------
+    let lb = { list: [], i: 0 };
+    let lbSets = [];   // photo lists collected from reviews
+    function showLB() {
+      const el = $('lightbox'), multi = lb.list.length > 1;
+      $('lbImg').src = lb.list[lb.i];
+      $('lbPrev').classList.toggle('hidden', !multi);
+      $('lbNext').classList.toggle('hidden', !multi);
+      $('lbCount').textContent = multi ? `${lb.i + 1} / ${lb.list.length}` : '';
+      el.classList.remove('hidden'); el.classList.add('flex');
+    }
+    function openLB(setIdx, i) { lb = { list: lbSets[setIdx] || [], i }; if (lb.list.length) showLB(); }
+    function openGalleryLB() { if (!galList.length) return; lb = { list: galList, i: galIdx }; showLB(); }
+    function lbStep(d) { lb.i = (lb.i + d + lb.list.length) % lb.list.length; showLB(); }
+    function closeLB() { $('lightbox').classList.add('hidden'); $('lightbox').classList.remove('flex'); }
+    const lbOpen = () => !$('lightbox').classList.contains('hidden');
+
+    // ---------- Quick view ----------
+    function openQuick(id, keepQty) {
+      const p = byId(id); if (!p) return;
+      quickId = id; if (!keepQty) { quickQty = 1; galIdx = 0; }
+      const saved = wishlist.includes(id);
+
+      $('quickImage').innerHTML = galleryShell(p);
+      galList = [];
+      validImages(p).then(list => { if (quickId !== id) return; galList = list; buildGallery(); });
+
+      $('quickBody').innerHTML = `
+        <span class="text-xs font-semibold uppercase tracking-widest text-clay-600">${esc(catLabel(p.category))}</span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-medium leading-tight mt-2 pr-10 md:pr-0">${esc(p.title)}</h3>
+        <a href="#quickReviews" onclick="event.preventDefault(); $('quickReviews').scrollIntoView({behavior:'smooth'})" class="block mt-3 text-sm hover:opacity-80"><span class="flex items-center gap-1.5">${starsHTML(ratingInfo(p).avg, 'w-4 h-4')}<strong>${ratingInfo(p).avg.toFixed(1)}</strong></span><span class="mt-1 flex flex-wrap items-center gap-x-2"><span class="text-stone-500 underline underline-offset-2">${ratingInfo(p).count ? ratingInfo(p).count.toLocaleString('en-IN') + ' customer review' + (ratingInfo(p).count > 1 ? 's' : '') : 'Be the first to review'}</span>${soldText(p.id) ? `<span class="text-stone-300">•</span><span class="font-medium text-clay-700">${soldText(p.id)}</span>` : ''}</span></a>
+        <p class="text-stone-600 text-sm leading-relaxed mt-4">${esc(p.description)}</p>
+        <div class="mt-5">${priceHTML(p, true)}${p.save > 0 ? `<p class="text-sm text-emerald-600 font-medium mt-1">You save ${money(p.save)}</p>` : ''}<p class="text-xs text-stone-400 mt-1">Inclusive of all taxes</p></div>
+        <div class="mt-6 md:mt-auto pt-6 border-t border-sand-200 flex flex-wrap items-center gap-3">
+          <div class="flex items-center border border-sand-300 rounded-full">
+            <button onclick="quickChange(-1)" class="w-10 h-11 hover:bg-sand-100 rounded-l-full" aria-label="Decrease quantity">−</button>
+            <span id="quickQty" class="w-8 text-center text-sm font-semibold">${quickQty}</span>
+            <button onclick="quickChange(1)" class="w-10 h-11 hover:bg-sand-100 rounded-r-full" aria-label="Increase quantity">+</button>
+          </div>
+          <button onclick="addToCart(${p.id}, quickQty); closeQuick()" class="max-sm:hidden flex-1 min-w-[140px] bg-ink text-white py-3 rounded-full text-sm font-semibold hover:bg-clay-700 transition">Add to cart</button>
+          <button onclick="toggleWish(${p.id})" class="${saved ? 'heart-on' : ''} p-3 border border-sand-300 rounded-full hover:bg-sand-100" aria-label="Save item"><i data-lucide="heart" class="w-4 h-4"></i></button>
+        </div>`;
+      $('quickBar').innerHTML = `<button onclick="addToCart(${p.id}, quickQty); closeQuick()" class="flex-1 py-3.5 rounded-md border border-clay-600 text-clay-700 text-sm font-bold">Add to cart</button><button onclick="addToCart(${p.id}, quickQty); closeQuick(); openCheckout()" class="flex-1 py-3.5 rounded-md bg-clay-600 text-white text-sm font-bold">Buy now</button>`;
+      pendingRating = 0; pendingPhotos = []; reviewLimit = REVIEWS_PER_PAGE;
+      $('quickReviews').innerHTML = reviewsHTML(p);
+      renderPhotoPreview();
+      checkReviewPhotos(p);
+      $('quickModal').classList.remove('hidden'); $('quickModal').classList.add('flex');
+      icons();
+    }
+    function quickChange(d) { quickQty = Math.max(1, Math.min(20, quickQty + d)); $('quickQty').textContent = quickQty; }
+    function closeQuick() { quickId = null; $('quickModal').classList.add('hidden'); $('quickModal').classList.remove('flex'); }
+    $('quickModal').addEventListener('click', e => { if (e.target === $('quickModal')) closeQuick(); });
+
+    // ---------- Customer reviews (with photos) ----------
+    // Reviews written on the page are saved in the visitor's own browser (localStorage).
+    let reviews = store.get('hh_reviews', {});
+    let pendingRating = 0;
+    let pendingPhotos = [];   // photos chosen for the review being written
+    const STAR_PATH = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z';
+
+    /* ==========================================================================
+       ★ REVIEWS  —  how customer reviews work
+       --------------------------------------------------------------------------
+       • Real reviews are written INSIDE each product block in ★ PRODUCTS
+         (the  reviews: [ ... ]  part) together with their 4 photos.
+       • Photos go in the folder  images/reviews/  — any file names you like,
+         just write the same names in the review.
+       • Fewer than 4 photos? Missing files are skipped automatically.
+       • Only the "sample" placeholder reviews below are kept here. They are
+         labelled "Sample", are not counted in ratings, and vanish when
+         SHOW_SAMPLE_REVIEWS = false.
+       ========================================================================== */
+
+    // 1) REAL customer reviews now live INSIDE each product (see "reviews: [ ... ]" in ★ PRODUCTS),
+    //    so a product's photos, price and reviews are all edited in one place.
+    const CUSTOMER_REVIEWS = {};
+    products.forEach(p => { CUSTOMER_REVIEWS[p.id] = p.reviews || []; });
+
+    // 2) SAMPLE reviews — placeholders so you can see the layout. They are labelled "Sample" on the page
+    //    and are NOT counted in star averages. Set SHOW_SAMPLE_REVIEWS to false to hide them.
+    const SHOW_SAMPLE_REVIEWS = true;
+    const SAMPLE_REVIEWS = {
+      1: [
+        { name: 'Nithin ', rating: 3, text: 'Holds heat beautifully and the enamel cleans up easily. Great for slow-cooked stews.', date: 'Sample', photos: reviewPics('sample-p1-r1') },
+        { name: 'Sample Customer B', rating: 4, text: 'Heavy but very well made. Lid fits snugly.', date: 'Sample', photos: reviewPics('sample-p1-r2') }
+      ],
+      2: [
+        { name: 'Sample Customer A', rating: 5, text: 'Lovely matte finish and a good weight. Looks great on the table.', date: 'Sample', photos: reviewPics('sample-p2-r1') },
+        { name: 'Sample Customer B', rating: 4, text: 'Sturdy plates, bowls are a nice size for everyday meals.', date: 'Sample', photos: reviewPics('sample-p2-r2') }
+      ],
+      3: [
+        { name: 'Sample Customer A', rating: 5, text: 'Soft, absorbent and dries quickly. Feels premium.', date: 'Sample', photos: reviewPics('sample-p3-r1') },
+        { name: 'Sample Customer B', rating: 4, text: 'Good quality cotton and holds up well after washing.', date: 'Sample', photos: reviewPics('sample-p3-r2') }
+      ],
+      4: [
+        { name: 'Sample Customer A', rating: 5, text: 'The warm glow is perfect for the bedside. Looks even better in person.', date: 'Sample', photos: reviewPics('sample-p4-r1') },
+        { name: 'Sample Customer B', rating: 4, text: 'Beautiful ribbed glass. Packaging was secure.', date: 'Sample', photos: reviewPics('sample-p4-r2') }
+      ],
+      5: [
+        { name: 'Sample Customer A', rating: 4, text: 'Sturdy basket with comfortable handles. Fits throws and cushions easily.', date: 'Sample', photos: reviewPics('sample-p5-r1') },
+        { name: 'Sample Customer B', rating: 5, text: 'Neat natural look and well woven.', date: 'Sample', photos: reviewPics('sample-p5-r2') }
+      ],
+      6: [
+        { name: 'Sample Customer A', rating: 5, text: 'Keeps coffee hot and the plunger moves smoothly. Easy to clean.', date: 'Sample', photos: reviewPics('sample-p6-r1') },
+        { name: 'Sample Customer B', rating: 5, text: 'Makes a smooth, full-bodied cup every morning.', date: 'Sample', photos: reviewPics('sample-p6-r2') }
+      ],
+      7: [
+        { name: 'Sample Customer A', rating: 5, text: 'Soft from the first wash and keeps me cool at night.', date: 'Sample', photos: reviewPics('sample-p7-r1') },
+        { name: 'Sample Customer B', rating: 4, text: 'Lovely relaxed texture and true to colour.', date: 'Sample', photos: reviewPics('sample-p7-r2') }
+      ],
+      8: [
+        { name: 'Sample Customer A', rating: 5, text: 'Cedarwood scent is warm and not overpowering. Burns evenly.', date: 'Sample', photos: reviewPics('sample-p8-r1') },
+        { name: 'Sample Customer B', rating: 4, text: 'Nice jar that I reuse after the candle is finished.', date: 'Sample', photos: reviewPics('sample-p8-r2') }
+      ]
+    };
+
+
+    // Rating shown to customers. It uses:
+    //   - the number you typed in  reviewCount  and the average you typed in  rating
+    //   - plus every review listed in the product's  reviews: [ ... ]  and reviews customers write on the page
+    // (reviews you list are counted inside reviewCount, so they are never counted twice)
+    function ratingInfo(p) {
+      const list = getReviews(p.id).filter(r => !r.sample);          // reviews we can actually show
+      const listed = (CUSTOMER_REVIEWS[p.id] || []).length;           // reviews you listed yourself
+      const unlisted = Math.max(0, (Number(p.reviewCount) || 0) - listed);  // typed reviews that aren't shown one by one
+      const n = unlisted + list.length;
+      if (!n) return { avg: p.rating, count: 0, unlisted: 0 };
+      const sum = p.rating * unlisted + list.reduce((s, r) => s + r.rating, 0);
+      return { avg: sum / n, count: n, unlisted };
+    }
+
+    function starsHTML(value, size = 'w-4 h-4') {
+      return `<span class="inline-flex" aria-label="${value.toFixed(1)} out of 5 stars">` +
+        [1, 2, 3, 4, 5].map(n => {
+          const on = value >= n - 0.25;
+          return `<svg viewBox="0 0 24 24" class="${size} ${on ? 'text-amber-500' : 'text-sand-300'}" aria-hidden="true"><path fill="currentColor" d="${STAR_PATH}"/></svg>`;
+        }).join('') + '</span>';
+    }
+
+    function ratingPickerHTML() {
+      return [1, 2, 3, 4, 5].map(n =>
+        `<button type="button" onclick="setReviewRating(${n})" class="p-0.5 hover:scale-110 transition" aria-label="${n} star${n > 1 ? 's' : ''}">
+          <svg viewBox="0 0 24 24" class="w-7 h-7 ${n <= pendingRating ? 'text-amber-500' : 'text-sand-300'}"><path fill="currentColor" d="${STAR_PATH}"/></svg></button>`
+      ).join('');
+    }
+    function setReviewRating(n) { pendingRating = n; $('ratingPicker').innerHTML = ratingPickerHTML(); }
+
+    // --- Review photo upload: shrink each photo so it fits in the browser's storage ---
+    function shrinkImage(file, max = 800, quality = 0.72) {
+      return new Promise((resolve, reject) => {
+        const url = URL.createObjectURL(file), im = new Image();
+        im.onload = () => {
+          const s = Math.min(1, max / Math.max(im.width, im.height));
+          const c = document.createElement('canvas');
+          c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+          c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+          URL.revokeObjectURL(url);
+          resolve(c.toDataURL('image/jpeg', quality));
+        };
+        im.onerror = () => { URL.revokeObjectURL(url); reject(new Error('unreadable')); };
+        im.src = url;
+      });
+    }
+    async function handlePhotos(input) {
+      const files = [...input.files]; input.value = '';
+      for (const f of files) {
+        if (pendingPhotos.length >= MAX_REVIEW_PHOTOS) { showToast(`You can add up to ${MAX_REVIEW_PHOTOS} photos`); break; }
+        if (!f.type.startsWith('image/')) { showToast('Please choose image files only'); continue; }
+        try { pendingPhotos.push(await shrinkImage(f)); } catch { showToast('Sorry, that photo could not be read'); }
+      }
+      renderPhotoPreview();
+    }
+    function removePhoto(i) { pendingPhotos.splice(i, 1); renderPhotoPreview(); }
+    function renderPhotoPreview() {
+      const box = $('rvPhotoPreview'); if (!box) return;
+      box.innerHTML = pendingPhotos.map((src, i) => `
+        <div class="relative w-20 h-20 rounded-xl overflow-hidden border border-sand-200">
+          <img src="${src}" alt="Your photo ${i + 1}" class="w-full h-full object-cover" />
+          <button type="button" onclick="removePhoto(${i})" class="absolute top-1 right-1 w-6 h-6 rounded-full bg-ink/80 text-white text-sm leading-none" aria-label="Remove photo ${i + 1}">×</button>
+        </div>`).join('');
+      const label = $('rvPhotoLabel');
+      if (label) label.classList.toggle('hidden', pendingPhotos.length >= MAX_REVIEW_PHOTOS);
+    }
+
+    // Review photos that don't exist on the server are hidden (filled in by checkReviewPhotos)
+    // Pad every product with extra labelled SAMPLE reviews so the page looks full while you test.
+    // They are marked "Sample", are NOT counted in ratings, and disappear when SHOW_SAMPLE_REVIEWS = false.
+    // Real reviews you add to CUSTOMER_REVIEWS always show first.
+    const SAMPLE_TARGET = 15;
+    const SAMPLE_FILLER = [
+      [5, 'Exactly as described. Very happy with the quality.'], [4, 'Good value for the price. Delivery was on time.'],
+      [5, 'Looks even better in person. Would buy again.'], [4, 'Well packed and arrived in perfect condition.'],
+      [5, 'Great finish and solid build.'], [3, 'Nice product, colour slightly different from the photo.'],
+      [5, 'Bought as a gift and they loved it.'], [4, 'Sturdy and practical for everyday use.'],
+      [5, 'Excellent quality, highly recommend.'], [4, 'Does the job well. Happy with the purchase.'],
+      [5, 'Lovely design that suits our home.'], [4, 'Better than I expected for this price.'],
+      [5, 'Fast delivery and great packaging.']
+    ];
+    products.map(p => p.id).forEach(id => {
+      const list = SAMPLE_REVIEWS[id] = SAMPLE_REVIEWS[id] || [];
+      for (let i = list.length; i < SAMPLE_TARGET; i++) {
+        const [rating, text] = SAMPLE_FILLER[(i + Number(id)) % SAMPLE_FILLER.length];
+        list.push({ name: 'Sample Customer ' + String.fromCharCode(65 + i), rating, text, date: 'Sample' });
+      }
+    });
+
+    const REVIEWS_PER_PAGE = 5;          // how many reviews show before "Show more"
+    let reviewLimit = REVIEWS_PER_PAGE;
+    function showMoreReviews() {
+      const p = byId(quickId); if (!p) return;
+      reviewLimit += 10;
+      $('quickReviews').innerHTML = reviewsHTML(p); renderPhotoPreview(); icons();
+    }
+    const photoMissing = {};
+    function getReviews(id) {
+      const real = [...(CUSTOMER_REVIEWS[id] || []), ...(reviews[id] || [])];
+      const samples = SHOW_SAMPLE_REVIEWS ? (SAMPLE_REVIEWS[id] || []).map(r => ({ ...r, sample: true })) : [];
+      return [...real, ...samples].map(r => ({ ...r, photos: (r.photos || []).filter(src => !photoMissing[src]) }));
+    }
+    async function checkReviewPhotos(p) {
+      const srcs = [...new Set(getReviews(p.id).flatMap(r => r.photos))].filter(src => !src.startsWith('data:'));
+      const ok = await Promise.all(srcs.map(probe));
+      let changed = false;
+      srcs.forEach((src, i) => { if (!ok[i]) { photoMissing[src] = true; changed = true; } });
+      if (changed && quickId === p.id) { $('quickReviews').innerHTML = reviewsHTML(p); renderPhotoPreview(); icons(); }
+    }
+
+    function reviewsHTML(p) {
+      const all = getReviews(p.id);
+      const list = all.filter(r => !r.sample);
+      const info = ratingInfo(p);
+      const counts = [5, 4, 3, 2, 1].map(s => list.filter(r => r.rating === s).length);
+      lbSets = [];
+
+      const summary = info.count ? `
+        <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 mb-8">
+          <div class="shrink-0">
+            <div class="font-serif text-5xl font-medium leading-none">${info.avg.toFixed(1)}</div>
+            <div class="mt-2">${starsHTML(info.avg, 'w-5 h-5')}</div>
+            <p class="text-xs text-stone-500 mt-1.5">Based on ${info.count} review${info.count > 1 ? 's' : ''}</p>
+          </div>
+          <div class="flex-1 space-y-1.5 max-w-xs ${info.unlisted || !list.length ? 'hidden' : ''}">
+            ${[5, 4, 3, 2, 1].map((s, i) => `
+              <div class="flex items-center gap-2 text-xs text-stone-500">
+                <span class="w-3 text-right">${s}</span>
+                <div class="flex-1 h-1.5 bg-sand-200 rounded-full overflow-hidden"><div class="h-full bg-amber-500 rounded-full" style="width:${list.length ? (counts[i] / list.length) * 100 : 0}%"></div></div>
+                <span class="w-4">${counts[i]}</span>
+              </div>`).join('')}
+          </div>
+        </div>` : `
+        <p class="text-sm text-stone-500 mb-8">No customer reviews yet — be the first to share your experience with this product.</p>`;
+
+      // Strip of all customer photos for this product
+      const allPhotos = list.flatMap(r => r.photos || []);
+      let photoStrip = '';
+      if (allPhotos.length) {
+        const si = lbSets.push(allPhotos) - 1;
+        photoStrip = `<div class="mb-8"><h5 class="text-sm font-semibold mb-3">Photos from customers</h5>
+          <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">${allPhotos.slice(0, 12).map((src, k) =>
+            `<button type="button" onclick="openLB(${si},${k})" class="shrink-0 w-20 h-20 rounded-xl overflow-hidden border border-sand-200 hover:opacity-90" aria-label="View customer photo ${k + 1}"><img src="${esc(src)}" alt="Customer photo" loading="lazy" class="w-full h-full object-cover" /></button>`).join('')}</div></div>`;
+      }
+
+      const ordered = [...all.filter(r => !r.sample).reverse(), ...all.filter(r => r.sample)];   // newest real first, samples last
+      const items = ordered.slice(0, reviewLimit).map(r => {
+        let photosHTML = '';
+        if (r.photos && r.photos.length) {
+          const si = lbSets.push(r.photos) - 1;
+          photosHTML = `<div class="grid grid-cols-4 gap-2 mt-3 max-w-md">${r.photos.map((src, k) =>
+            `<button type="button" onclick="openLB(${si},${k})" class="aspect-square w-full rounded-xl overflow-hidden border border-sand-200 hover:opacity-90" aria-label="View review photo ${k + 1}"><img src="${esc(src)}" alt="Photo from ${esc(r.name)}" loading="lazy" class="w-full h-full object-cover" /></button>`).join('')}</div>`;
+        }
+        return `
+        <article class="py-5 border-t border-sand-200 first:border-0">
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-full bg-clay-600/10 text-clay-700 font-semibold text-sm flex items-center justify-center">${esc(r.name.charAt(0).toUpperCase())}</span>
+              <div>
+                <p class="text-sm font-semibold leading-tight">${esc(r.name)}${r.sample ? ' <span class="ml-1 align-middle text-[10px] font-semibold uppercase tracking-wider bg-sand-200 text-stone-600 px-2 py-0.5 rounded-full">Sample</span>' : ''}</p>
+                <p class="text-xs text-stone-400">${r.sample ? 'Placeholder review' : esc(r.date)}</p>
+              </div>
+            </div>
+            ${starsHTML(r.rating, 'w-4 h-4')}
+          </div>
+          <p class="text-sm text-stone-600 leading-relaxed mt-3">${esc(r.text)}</p>
+          ${photosHTML}
+        </article>`;
+      }).join('');
+
+      return `
+        <div class="grid lg:grid-cols-[minmax(0,1fr)_340px] gap-8 lg:gap-10 items-start">
+        <div class="min-w-0">
+        <h4 class="font-serif text-2xl font-medium mb-5">Customer reviews</h4>
+        ${summary}
+        ${photoStrip}
+        ${all.some(r => r.sample) ? '<p class="text-xs text-stone-500 bg-sand-100 rounded-xl px-4 py-2.5 mb-2">Reviews marked “Sample” are placeholders shown for layout only and are not real customer feedback.</p>' : ''}
+        <div>${items}</div>
+        ${ordered.length > reviewLimit ? `<button type="button" onclick="showMoreReviews()" class="mt-4 w-full sm:w-auto px-6 py-2.5 border border-ink rounded-full text-sm font-semibold hover:bg-ink hover:text-white transition">Show more reviews (${ordered.length - reviewLimit} more)</button>` : ''}
+        </div>
+        <form onsubmit="submitReview(event, ${p.id})" class="bg-white border border-sand-200 rounded-2xl p-5 sm:p-6 space-y-4 lg:sticky lg:top-4">
+          <h5 class="text-sm font-semibold">Write a review</h5>
+          <div>
+            <span class="block text-xs font-semibold text-stone-600 mb-1">Your rating</span>
+            <div id="ratingPicker" class="flex -ml-0.5">${ratingPickerHTML()}</div>
+          </div>
+          <div>
+            <label for="rv-name" class="block text-xs font-semibold text-stone-600 mb-1.5">Name</label>
+            <input id="rv-name" type="text" required maxlength="40" placeholder="Your name" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none" />
+          </div>
+          <div>
+            <label for="rv-text" class="block text-xs font-semibold text-stone-600 mb-1.5">Your comment</label>
+            <textarea id="rv-text" required maxlength="500" rows="3" placeholder="What did you like (or not) about this product?" class="w-full px-4 py-3 border border-sand-300 rounded-xl text-sm focus:border-clay-600 focus:outline-none resize-none"></textarea>
+          </div>
+          <div>
+            <span class="block text-xs font-semibold text-stone-600 mb-1.5">Add photos <span class="font-normal text-stone-400">(optional, up to ${MAX_REVIEW_PHOTOS})</span></span>
+            <div id="rvPhotoPreview" class="flex flex-wrap gap-2"></div>
+            <label id="rvPhotoLabel" class="inline-flex items-center gap-2 mt-2 px-4 py-2.5 border border-dashed border-sand-300 rounded-xl text-sm font-medium cursor-pointer hover:bg-sand-100 transition focus-within:ring-2 focus-within:ring-clay-600">
+              <i data-lucide="camera" class="w-4 h-4"></i> Choose photos
+              <input id="rv-photos" type="file" accept="image/*" multiple class="sr-only" onchange="handlePhotos(this)" />
+            </label>
+          </div>
+          <button type="submit" class="w-full px-6 py-3 bg-ink text-white rounded-full text-sm font-semibold hover:bg-clay-700 transition">Submit review</button>
+        </form>
+        </div>`;
+    }
+
+    function submitReview(e, id) {
+      e.preventDefault();
+      if (!pendingRating) { showToast('Please choose a star rating'); return; }
+      const review = {
+        name: $('rv-name').value.trim(),
+        text: $('rv-text').value.trim(),
+        rating: pendingRating,
+        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+        photos: [...pendingPhotos]
+      };
+      if (!review.name || !review.text) return;
+      const updated = { ...reviews, [id]: [...(reviews[id] || []), review] };
+      if (!store.set('hh_reviews', updated)) {
+        showToast('Could not save: browser storage is full. Try fewer or smaller photos.');
+        return;
+      }
+      reviews = updated;
+      showToast('Thanks for your review!');
+      renderProducts();            // refresh ratings on the cards
+      openQuick(id, true);         // refresh the popup
+      $('quickReviews').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ---------- Cart ----------
+    function addToCart(id, qty = 1) {
+      const existing = cart.find(i => i.id === id);
+      if (existing) existing.quantity += qty; else cart.push({ id, quantity: qty });
+      updateCartUI();
+      showToast('Added to your basket');
+    }
+    function changeQuantity(id, delta) {
+      const item = cart.find(i => i.id === id); if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) cart = cart.filter(i => i.id !== id);
+      updateCartUI();
+    }
+    function removeFromCart(id) { cart = cart.filter(i => i.id !== id); updateCartUI(); }
+
+    function totals() {
+      const subtotal = cart.reduce((s, i) => s + byId(i.id).price * i.quantity, 0);
+      const savings = cart.reduce((s, i) => s + byId(i.id).save * i.quantity, 0);
+      return { subtotal, total: subtotal, savings };
+    }
+
+    function updateCartUI() {
+      store.set('hh_cart', cart);
+      const count = cart.reduce((a, i) => a + i.quantity, 0);
+      $('cartCountBadge').textContent = count;
+      $('navCartBadge').textContent = count; $('navCartBadge').classList.toggle('hidden', !count);
+
+      const list = $('cartItemList'), btn = $('openCheckoutBtn');
+      if (cart.length === 0) {
+        list.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center py-16 text-stone-400">
+          <i data-lucide="shopping-bag" class="w-12 h-12 stroke-[1.25] mb-3"></i>
+          <p class="text-sm font-semibold text-stone-600">Your basket is empty</p>
+          <p class="text-xs mt-1">Browse the collection and add something you love.</p></div>`;
+        btn.disabled = true;
+      } else {
+        list.innerHTML = cart.map(i => {
+          const p = byId(i.id);
+          return `<div class="flex gap-4 py-5 border-b border-sand-200 last:border-0">
+            ${imageBlock(p, 'w-20 h-20 rounded-2xl overflow-hidden shrink-0')}
+            <div class="flex-1 min-w-0">
+              <div class="flex justify-between gap-2">
+                <h5 class="text-sm font-medium leading-snug">${esc(p.title)}</h5>
+                <button onclick="removeFromCart(${p.id})" class="text-stone-400 hover:text-rose-600 shrink-0" aria-label="Remove ${esc(p.title)}"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+              </div>
+              <p class="text-xs text-stone-500 mt-0.5">${money(p.price)} each${p.discount > 0 ? ` <del class="text-stone-400">${money(p.mrp)}</del> <span class="text-emerald-600 font-semibold">${p.discount}% off</span>` : ''}</p>
+              <div class="flex items-center justify-between mt-3">
+                <div class="flex items-center border border-sand-300 rounded-full text-sm">
+                  <button onclick="changeQuantity(${p.id}, -1)" class="w-8 h-8 hover:bg-sand-100 rounded-l-full" aria-label="Decrease quantity">−</button>
+                  <span class="w-6 text-center text-xs font-semibold">${i.quantity}</span>
+                  <button onclick="changeQuantity(${p.id}, 1)" class="w-8 h-8 hover:bg-sand-100 rounded-r-full" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-sm font-semibold">${money(p.price * i.quantity)}</span>
+              </div>
+            </div></div>`;
+        }).join('');
+        btn.disabled = false;
+      }
+
+      const t = totals();
+      $('cartSubtotal').textContent = money(t.subtotal);
+      $('cartTotal').textContent = money(t.total);
+      $('cartSavings').textContent = t.savings > 0 ? `You will save ${money(t.savings)} on this order` : '';
+      $('cartSavings').classList.toggle('hidden', !(t.savings > 0));
+      $('checkoutOrderTotal').textContent = money(t.total);
+
+      icons();
+    }
+
+    // ---------- Drawer ----------
+    function openCart() {
+      $('cartModal').classList.remove('pointer-events-none', 'opacity-0');
+      $('cartModal').setAttribute('aria-hidden', 'false');
+      $('cartDrawer').classList.remove('translate-x-full');
+    }
+    function closeCart() {
+      $('cartDrawer').classList.add('translate-x-full');
+      $('cartModal').classList.add('opacity-0', 'pointer-events-none');
+      $('cartModal').setAttribute('aria-hidden', 'true');
+    }
+    $('cartOpenBtn').addEventListener('click', openCart);
+    $('cartCloseBtn').addEventListener('click', closeCart);
+    $('cartBackdrop').addEventListener('click', closeCart);
+
+    // ---------- Checkout ----------
+    function openCheckout() {
+      const t = totals();
+      $('checkoutItems').innerHTML = cart.map(i => {
+        const p = byId(i.id);
+        return `<li class="flex justify-between gap-3"><span class="text-stone-600">${esc(p.title)} <span class="text-stone-400">× ${i.quantity}</span></span><span class="font-medium shrink-0">${money(p.price * i.quantity)}</span></li>`;
+      }).join('');
+      $('sumSubtotal').textContent = money(t.subtotal);
+      $('sumTotal').textContent = money(t.total);
+      $('checkoutFormWrapper').classList.remove('hidden');
+      $('checkoutSuccessWrapper').classList.add('hidden');
+      $('checkoutModal').classList.remove('hidden'); $('checkoutModal').classList.add('flex');
+    }
+    function closeCheckout() { $('checkoutModal').classList.add('hidden'); $('checkoutModal').classList.remove('flex'); }
+    $('openCheckoutBtn').addEventListener('click', () => { closeCart(); openCheckout(); });
+    $('closeCheckoutBtn').addEventListener('click', closeCheckout);
+
+    function buildWhatsAppMessage(orderNo) {
+      const t = totals();
+      const lines = cart.map((i, n) => {
+        const p = byId(i.id);
+        return `${n + 1}. ${p.title} × ${i.quantity} — ${money(p.price * i.quantity)}`;
+      });
+      const notes = $('f-notes').value.trim();
+      return [
+        `*New order ${orderNo}* — ${STORE_NAME}`,
+        '',
+        '*Items*',
+        ...lines,
+        '',
+        `Subtotal: ${money(t.subtotal)}`,
+        `*Total: ${money(t.total)}*`,
+        ...(t.savings > 0 ? [`(You saved ${money(t.savings)})`] : []),
+        '(Delivery charges to be confirmed)',
+        '',
+        '*Delivery details*',
+        `Name: ${$('f-name').value.trim()}`,
+        `Phone: ${$('f-phone').value.trim()}`,
+        `Address: ${$('f-addr').value.trim()}`,
+        `City: ${$('f-city').value.trim()}`,
+        `Postal code: ${$('f-zip').value.trim()}`,
+        ...(notes ? [`Notes: ${notes}`] : [])
+      ].join('\n');
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      if (cart.length === 0) return;
+      const orderNo = '#HH-' + Math.floor(100000 + Math.random() * 900000);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildWhatsAppMessage(orderNo))}`;
+
+      // Open WhatsApp (inside the click/submit gesture so popup blockers allow it)
+      window.open(url, '_blank', 'noopener');
+
+      $('orderNumber').textContent = orderNo;
+      $('waRetryLink').href = url;
+      $('checkoutFormWrapper').classList.add('hidden');
+      $('checkoutSuccessWrapper').classList.remove('hidden');
+      $('checkoutForm').reset();
+      cart = []; updateCartUI();
+      icons();
+    }
+    function dismissCheckoutSuccess() { closeCheckout(); }
+
+    // ---------- Misc ----------
+    let toastTimer;
+    function showToast(msg) {
+      $('toastMessage').textContent = msg;
+      $('toast').classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => $('toast').classList.add('translate-y-24', 'opacity-0'), 2600);
+    }
+    function subscribe(e) { e.preventDefault(); e.target.reset(); showToast('Thanks — you\'re subscribed'); }
+
+    document.addEventListener('keydown', e => {
+      if (lbOpen()) {
+        if (e.key === 'Escape') closeLB();
+        if (e.key === 'ArrowLeft' && lb.list.length > 1) lbStep(-1);
+        if (e.key === 'ArrowRight' && lb.list.length > 1) lbStep(1);
+        return;
+      }
+      if (quickId !== null && !$('quickModal').classList.contains('hidden') && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
+        if (e.key === 'ArrowLeft') setGal(galIdx - 1);
+        if (e.key === 'ArrowRight') setGal(galIdx + 1);
+      }
+      if (e.key !== 'Escape') return;
+      closeCart(); closeQuick(); closeCheckout(); closeSheet();
+    });
+
+    // ---------- Mobile: sort/filter sheet + photo swipe ----------
+    function openSheet(k) {
+      $('sortPane').classList.toggle('hidden', k !== 'sort'); $('filterPane').classList.toggle('hidden', k !== 'filter');
+      $('sheetTitle').textContent = k === 'sort' ? 'Sort by' : 'Filter by price';
+      document.querySelectorAll('#sortPane button').forEach(b => b.classList.toggle('text-clay-600', b.dataset.v === sortBy) || b.classList.toggle('font-semibold', b.dataset.v === sortBy));
+      $('sheet').classList.remove('hidden'); $('sheet').classList.add('flex'); icons();
+    }
+    function closeSheet() { $('sheet').classList.add('hidden'); $('sheet').classList.remove('flex'); }
+    function pickSort(v) { sortBy = v; $('sortSelect').value = v; renderProducts(); closeSheet(); }
+    let swX = 0;
+    const swS = e => { swX = e.changedTouches[0].clientX; };
+    const swE = e => { const d = e.changedTouches[0].clientX - swX; if (Math.abs(d) > 40) setGal(galIdx + (d < 0 ? 1 : -1)); };
+
+    // ---------- Init ----------
+    const maxOff = Math.max(...products.map(p => p.discount));
+    if (maxOff > 0) { $('promoText').textContent = `Up to ${maxOff}% off`; $('promoBanner').classList.remove('hidden'); $('promoBanner').classList.add('flex'); }
+    $('year').textContent = new Date().getFullYear();
+    applyBranding();
+    renderTopNav();
+    ['priceRange', 'priceRangeM'].forEach(id => { $(id).max = PRICE_MAX; $(id).addEventListener('input', e => { setPriceUI(e.target.value); renderProducts(); }); });
+    setPriceUI(PRICE_MAX);
+    renderAll();
+    updateCartUI();
+  </script>
+</body>
+</html>
